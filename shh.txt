@@ -1,0 +1,148 @@
+open terminal
+
+django-admin startproject helloworld
+
+cd helloworld
+
+python manage.py runserver
+
+python manage.py startapp hello
+
+
+
+settings.py
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'hello',
+]
+
+
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.utils import timezone
+
+
+
+
+view.py file 
+
+# Create your views here.
+def foo(request):
+   return HttpResponse("Hello Good Morning.")
+
+
+
+
+in hello 
+create  url.py
+
+copy url .py contents
+
+
+
+in helloworld
+open url.py file
+
+
+
+
+http://127.0.0.1:8000/hello/
+
+
+
+
+lab 2
+
+
+(venv) C:\Users\Sushil\PycharmProjects\firstproject>django-admin startproject project1
+
+(venv) C:\Users\Sushil\PycharmProjects\firstproject>cd project1
+
+(venv) C:\Users\Sushil\PycharmProjects\firstproject\project1>python manage.py startapp appproject
+
+(venv) C:\Users\Sushil\PycharmProjects\firstproject\project1>
+
+
+
+(venv) C:\Users\Sushil\PycharmProjects\firstproject\project1>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 21, 2018 - 14:18:50
+Django version 1.11.11, using settings 'project1.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+(venv) C:\Users\Sushil\PycharmProjects\firstproject\project1>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+March 21, 2018 - 14:18:50
+Django version 1.11.11, using settings 'project1.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+
+(venv) C:\Users\Sushil\PycharmProjects\firstproject\project1>make migration
+'make' is not recognized as an internal or external command,
+operable program or batch file.
+
+(venv) C:\Users\Sushil\PycharmProjects\firstproject\project1>python manage.py makemigrations
+No changes detected
+
+(venv) C:\Users\Sushil\PycharmProjects\firstproject\project1>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying sessions.0001_initial... OK
+
+(venv) C:\Users\Sushil\PycharmProjects\firstproject\website>python manage.py shell
+
+
+(venv) C:\Users\Sushil\PycharmProjects\firstproject\website>python manage.py shell
+Python 2.7.11 (v2.7.11:6d1b6a68f775, Dec  5 2015, 20:40:30) [MSC v.1500 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from genericviews.models import product
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+ImportError: cannot import name product
+>>> from genericviews.models import Product
+>>> Products.objects.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'Products' is not defined
+>>> Product.objects.all()
+<QuerySet [<Product: Sonata>]>
+>>> p=Product(title='watch')
+>>> p.save()
+>>> Product.objects.all()
+<QuerySet [<Product: Sonata>, <Product: watch>]>
+>>>
+
+
+
+
